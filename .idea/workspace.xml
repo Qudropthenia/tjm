@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09fab035-ce93-48b8-9675-c1f88d9114bf" name="Default" comment="" />
+    <list default="true" id="09fab035-ce93-48b8-9675-c1f88d9114bf" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/tjm/client/Client.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/tjm/client/Login.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/tjm/net/Net.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/tjm/server/ServerClient.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/tjm/server/UniqueID.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/AbstractLayout.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/DimensionInfo.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/GridConstraints.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/GridLayoutManager.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/HorizontalInfo.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/LayoutState.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/Spacer.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/SupportCode.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/Util.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/VerticalInfo.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/client/Client$1.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/client/Client$2.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/client/Client.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/client/Login$1.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/client/Login$2.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/client/Login.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/net/Net$1.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/net/Net.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/server/Server$1.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/server/Server$2.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/server/Server$3.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/server/Server.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/server/ServerClient.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/server/ServerMain.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/ru/tjm/server/UniqueID.class" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/tjm/server/Server.java" afterPath="$PROJECT_DIR$/src/main/java/ru/tjm/server/Server.java" />
+      <change beforePath="$PROJECT_DIR$/tjm_v2.iml" afterPath="$PROJECT_DIR$/tjm_v2.iml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -126,6 +167,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tjm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tjm_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tjm_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tjm" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tjm_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tjm_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tjm" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tjm_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tjm_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tjm" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -259,7 +327,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2175000" />
+    <option name="totallyTimeSpent" value="2332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -336,13 +404,9 @@
         <state relative-caret-position="537">
           <caret line="57" column="50" lean-forward="false" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#517#674#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#753#878#0" expanded="true" />
-            <element signature="e#877#878#0" expanded="true" />
-            <element signature="e#970#1095#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#667#916#0" expanded="false" />
+            <element signature="e#915#916#0" expanded="false" />
           </folding>
         </state>
       </provider>
