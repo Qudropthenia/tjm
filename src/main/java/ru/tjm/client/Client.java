@@ -47,6 +47,7 @@ public class Client extends JFrame {
 
     private void createWindow() {
         try {
+            // Для того чтобы выставить look and feel как в системе (например соответствующий теме windows)
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();

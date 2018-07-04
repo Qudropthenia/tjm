@@ -16,7 +16,9 @@ public class Net {
 
     public boolean openConnection(String address) {
         try {
+            // Cоздаваемый сокет присоединяется к любому свободному порту на локальной машине
             socket = new DatagramSocket();
+            // Возвращает IP адрес удаленного узла
             ip = InetAddress.getByName(address);
         } catch (SocketException e) {
             e.printStackTrace();
@@ -57,3 +59,6 @@ public class Net {
     }
 
 }
+
+// http://kek.ksu.ru/eos/Java/Tutorial_Java_AU/Glava19/Index1.htm - Сетевые средства Java
+// http://kek.ksu.ru/eos/Java/Tutorial_Java_AU/Glava19/Index3.htm - udp
