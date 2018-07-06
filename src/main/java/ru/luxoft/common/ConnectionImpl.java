@@ -8,19 +8,27 @@ public class ConnectionImpl implements Connection, Runnable {
     private ConnectionListener connectionListener;
     private boolean running = true;
     private OutputStream out;
+    private InputStream in;
 
     public ConnectionImpl(Socket socket, ConnectionListener connectionListener) {
-        this.socket = socket;
-        this.connectionListener = connectionListener;
-        Thread t = new Thread(this);
-        t.setPriority(Thread.MIN_PRIORITY);
-        t.start();
+        try {
+            this.socket = socket;
+            this.connectionListener = connectionListener;
+            out = socket.getOutputStream();
+            in = socket.getInputStream();
+            Thread t = new Thread(this);
+            t.setPriority(Thread.MIN_PRIORITY);
+            t.start();
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
     public void send(Message msg) {
-        try(ObjectOutputStream objOut = new ObjectOutputStream(out)) {
-            objOut.writeObject(out);
+        try {
+            ObjectOutputStream objOut = new ObjectOutputStream(out);
+            objOut.writeObject(msg);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,7 +43,6 @@ public class ConnectionImpl implements Connection, Runnable {
     public void run() {
         while (running) {
             try {
-                InputStream in = socket.getInputStream();
                 int amount = in.available();
                 if (amount != 0) {
                     ObjectInputStream objIn = new ObjectInputStream(in);

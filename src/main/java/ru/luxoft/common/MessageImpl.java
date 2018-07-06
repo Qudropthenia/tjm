@@ -25,4 +25,13 @@ public class MessageImpl implements Message {
     public int getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "MessageImpl{" +
+                "nick='" + nick + '\'' +
+                ", content='" + content + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

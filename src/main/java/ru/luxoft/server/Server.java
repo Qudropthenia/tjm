@@ -32,7 +32,8 @@ public class Server implements ConnectionListener {
             try {
                 // Ожидание подключения и получение клюентского сокета
                 Socket socket = serverSocket.accept();
-                connections.add(new ConnectionImpl(socket, this));
+//                connections.add(new ConnectionImpl(socket, this));
+                connectionCreated(new ConnectionImpl(socket, this));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -40,21 +41,21 @@ public class Server implements ConnectionListener {
     }
 
     @Override
-    public void connectionCreated(Connection c) {
+    public synchronized void connectionCreated(Connection c) {
         connections.add(c);
-        c.close();
+//        c.close();
         System.out.println("Connection was added");
     }
 
     @Override
-    public void connectionClosed(Connection c) {
+    public synchronized void connectionClosed(Connection c) {
         connections.remove(c);
         c.close();
         System.out.println("Connection was closed");
     }
 
     @Override
-    public void connectionException(Connection c, Exception ex) {
+    public synchronized void connectionException(Connection c, Exception ex) {
         connections.remove(c);
         c.close();
         System.out.println("Connection was closed");
@@ -62,7 +63,7 @@ public class Server implements ConnectionListener {
     }
 
     @Override
-    public void recivedContent(Message msg) {
+    public synchronized void recivedContent(Message msg) {
         for (Connection c: connections) {
             c.send(msg);
         }
