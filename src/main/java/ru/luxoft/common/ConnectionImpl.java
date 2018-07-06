@@ -43,6 +43,7 @@ public class ConnectionImpl implements Connection, Runnable {
     public void run() {
         while (running) {
             try {
+                // Ожидание сообщений от клиента
                 int amount = in.available();
                 if (amount != 0) {
                     ObjectInputStream objIn = new ObjectInputStream(in);

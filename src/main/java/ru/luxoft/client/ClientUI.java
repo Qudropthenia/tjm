@@ -8,16 +8,27 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Random;
 
 public class ClientUI implements ConnectionListener{
     private Connection c;
 
-    private JTextField tf_addres;
+    private JFrame frame = new JFrame("Test");
+    private JTextField tf_host;
     private JButton btn_connection;
     private JTextArea textArea1;
     private JTextField tf_msg;
     private JButton btn_send;
     private JPanel p_main;
+    private JTextField tf_login;
+    private JLabel l_login;
+    private JLabel l_id;
+    private JTextField tf_id;
+    private JLabel l_host;
+    private JLabel l_port;
+    private JTextField tf_port;
+    private JPanel p_auth;
+    private JList list1;
 
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -31,16 +42,16 @@ public class ClientUI implements ConnectionListener{
     public ClientUI() {
         setState(false);
         p_main.setSize(600, 600);
-        JFrame frame = new JFrame("Test");
+//        frame = new JFrame("Test");
         frame.setContentPane(p_main);
         frame.setLocationRelativeTo(null);
-        frame.setSize(600, 600);
         frame.pack();
+        frame.setSize(600, 600);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
-
+        final Random random = new Random();
+        tf_id.setText(String.valueOf(random.nextInt(9999)));
         btn_connection.addActionListener(this::AL_btn_connection);
         btn_send.addActionListener(this::AL_btn_send);
     }
@@ -48,12 +59,23 @@ public class ClientUI implements ConnectionListener{
     // ActionListener for component
     private void AL_btn_connection(ActionEvent e) {
         try {
-            String host = tf_addres.getText().trim();
-            Socket socket = new Socket(InetAddress.getByName(host), Connection.PORT);
+            String host = tf_host.getText().trim();
+//            Socket socket = new Socket(InetAddress.getByName(host), Connection.PORT);
+            if (tf_login.getText().trim().length() == 0 ||
+                    tf_id.getText().trim().length() == 0 ||
+                    tf_port.getText().trim().length() == 0 ||
+                    tf_login.getText().trim().length() == 0) return;
+            Socket socket = new Socket(InetAddress.getByName(host), Integer.parseInt(tf_port.getText().trim()));
             c = new ConnectionImpl(socket, this);
             connectionCreated(c);
         } catch (IOException e1) {
-            e1.printStackTrace();
+            switch (e1.getMessage()) {
+                case "Connection refused: connect": {
+                    JOptionPane.showMessageDialog(null, "Ошибка при подключении к срверу", "Ошибка соединения", JOptionPane.ERROR_MESSAGE);
+                } break;
+                default: { }
+            }
+//            e1.printStackTrace();
         }
     }
 
@@ -73,7 +95,11 @@ public class ClientUI implements ConnectionListener{
         tf_msg.setEnabled(isConnected);
         btn_send.setEnabled(isConnected);
 
-        tf_addres.setEnabled(!isConnected);
+//        p_auth.setVisible(!isConnected);
+        tf_host.setEnabled(!isConnected);
+        tf_port.setEnabled(!isConnected);
+        tf_login.setEnabled(!isConnected);
+        tf_id.setEnabled(!isConnected);
         btn_connection.setEnabled(!isConnected);
     }
 

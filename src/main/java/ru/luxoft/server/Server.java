@@ -43,7 +43,6 @@ public class Server implements ConnectionListener {
     @Override
     public synchronized void connectionCreated(Connection c) {
         connections.add(c);
-//        c.close();
         System.out.println("Connection was added");
     }
 
@@ -65,6 +64,7 @@ public class Server implements ConnectionListener {
     @Override
     public synchronized void recivedContent(Message msg) {
         for (Connection c: connections) {
+            msg.toString();
             c.send(msg);
         }
     }
